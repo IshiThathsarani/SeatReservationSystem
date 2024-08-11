@@ -1,3 +1,5 @@
+// define seat schema and model
+
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
