@@ -48,4 +48,5 @@ const cancelReservation = async (req, res) => {
     }
 };
 
-export default { getSeats, reserveSeat, cancelReservation };
+export default { getSeats, reserveSeat, cancelReservation};
+export { getSeats, reserveSeat, cancelReservation};
