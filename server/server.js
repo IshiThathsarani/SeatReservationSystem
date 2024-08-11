@@ -1,6 +1,7 @@
 import express from 'express';
 import connectDB from './config/db.js';
-import seatRouter from './routes/seatRouter.js';
+import seatRouter from './routes/seatRouters.js';
+import dotenv from 'dotenv';
 
 const port = 4000;
 
