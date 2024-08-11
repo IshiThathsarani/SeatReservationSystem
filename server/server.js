@@ -13,7 +13,7 @@ app.use(express.json());
 app.use('/api/seats', seatRouter);
 
 app.get('/', (req, res) => {
-  res.send('Hello World');
+  res.send('Online Seat Reservation System');
 });
 
 app.listen(port, () => {    
