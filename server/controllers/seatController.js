@@ -9,25 +9,22 @@ const getSeats = async (req, res) => {
 };
 
 // Reserve a seat
-const reserveSeat = async (req, res) => {
-    const { seatNumber, reservedBy } = req.body;
-
-    const seat = await Seat.findOne({ seatNumber });
-
-    if (seat) {
-        if (seat.reserved) {
-            res.status(400).json({ message: 'Seat already reserved' });
-        } else {
-            seat.reserved = true;
-            seat.reservedBy = reservedBy;
-            await seat.save();
-            res.json({ message: 'Seat reserved successfully', seat });
-        }
-    } else {
-        res.status(404).json({ message: 'Seat not found' });
+const reserveSeat = async () => {
+    if (seatNumber && nic && name) {
+      try {
+        await axios.post('http://localhost:4000/reserve', {
+          seatNumber: parseInt(seatNumber),
+          nic,
+          name,
+        });
+        fetchSeats();
+        resetForm();
+      } catch (error) {
+        console.error('Error reserving seat:', error.response?.data || error.message);
+      }
     }
-};
-
+  };
+  
 // Cancel a reservation
 const cancelReservation = async (req, res) => {
     const { seatNumber } = req.body;
@@ -50,3 +47,4 @@ const cancelReservation = async (req, res) => {
 
 export default { getSeats, reserveSeat, cancelReservation};
 export { getSeats, reserveSeat, cancelReservation};
+
