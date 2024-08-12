@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+// import React from 'react';
+// import SeatList from './components/SeatList';
+
+// function App() {
+//     return (
+//         <div className="App">
+//             <h1>Seat Reservation System</h1>
+//             <SeatList />
+//         </div>
+//     );
+// }
+
+// export default App;
+
+
+import React from 'react';
 import './App.css';
+// import SeatList from './components/SeatList';
+import SeatReservation from './components/seatReservation';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SeatReservation />
     </div>
   );
 }
